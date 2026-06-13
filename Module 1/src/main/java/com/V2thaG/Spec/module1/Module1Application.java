@@ -23,6 +23,6 @@ public class Module1Application implements CommandLineRunner {
 		/// compare their hashcodes using 'objectname'.hashcode() inside a sys.out.prtln()
 
 		paymentServiceObj.pay();
-		paymentServiceObj.pay();
+
 	}
 }
