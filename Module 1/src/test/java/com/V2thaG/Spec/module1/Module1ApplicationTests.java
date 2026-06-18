@@ -8,6 +8,7 @@ class Module1ApplicationTests {
 
 	@Test
 	void contextLoads() {
+		/// you may create tests over here and then run em' with the help of maven in the terminal.
 	}
 
 }
