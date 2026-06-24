@@ -1,0 +1,7 @@
+1. SpringBoot has auto config which makes it so that we dont have to write the logic for each and everything that we would like to intergrate into the project so that the devs can instead focus on writing business logic.
+
+2. no need to manually add the dependencies everything is included in the started bundle
+
+3. While Spring Framework can be used directly, most companies prefer Spring Boot for new projects because it accelerates development and reduces boilerplate configuration.
+
+4. Spring Boot comes with built in servers like Tomcat, so applications can be run directly as a JAR ( after they get converted to JAR files by the maven tool that is )without deploying to an external application server.

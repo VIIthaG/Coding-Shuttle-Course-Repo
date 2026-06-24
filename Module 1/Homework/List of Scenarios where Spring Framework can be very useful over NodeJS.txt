@@ -1,0 +1,7 @@
+1. Spring is useful over NodeJs in that it has IoC and it has a strong Affinity for Dependency Injection
+
+2. you have full control over the setup so if you want to go legacy or make your own custom project that is up to you . It also allows users to include only the Spring modules they need, such as MVC, Security, or Data JPA.
+
+3. has stronger type safety because it uses java and also has multithreading for the same reason i.e java
+
+4. Spring is used throughout the legacy code bases of large enterprise applications and software like banking applications and huge e-commerce distributed systems etc
