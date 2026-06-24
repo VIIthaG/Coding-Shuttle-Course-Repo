@@ -1,6 +1,6 @@
 ## Important Note:
 
-After Pulling or Cloning the repo locally onto your system, make sure you mark the 'java' folder which would be present under the 'main' folder in your 'src' directory, as the sources root. Furthermore make sure you set up maven right otherwise you can't get the application to run 
+After Pulling or Cloning the repo locally onto your system, make sure you mark the 'java' folder which would be present under the 'main' folder in your 'src' directory, as the sources root. Furthermore make sure you right click your 'pom.xml' file and click 'add as maven project', otherwise you can't get the application to run 
 
 
 
