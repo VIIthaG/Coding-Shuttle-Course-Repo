@@ -1,1 +1,6 @@
-
+- @Override
+- @Configuration
+- @Autowired
+- @Bean
+- @Component
+- @Qualifier
