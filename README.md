@@ -1,6 +1,8 @@
 ## Important Note:
 
-After Pulling or Cloning the repo locally onto your system, make sure you right click your 'pom.xml' file and click 'add as maven project', otherwise you can't get the application to run 
+If You are going to be starting a new module and therefore decide to make a new Springboot Project using the initializer, change the name of the parent folder of 'src' using the file explorer only (if at all you decide to do this) and then, make sure you move the project file to the desired location and finally, make sure you right click your 'pom.xml' file and click 'add as maven project', otherwise you can't get the application to run. 
+
+###Once all this is done
 
 
 
