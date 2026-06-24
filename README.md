@@ -1,3 +1,10 @@
+## Important Note:
+
+After Pulling or Cloning the repo locally onto your system, make sure you set the 'java' folder which would be present under the 'main' folder in your 'src' directory
+Furthermore make sure you set up maven right otherwise you can't get the application to run 
+
+
+
 # Coding Shuttle Spring Boot Course Repo
 
 This repository contains my practice code and assignments from a Spring Boot course. It includes hands-on implementations of core Spring Boot concepts such as REST APIs, dependency injection, JPA, and database integration.
