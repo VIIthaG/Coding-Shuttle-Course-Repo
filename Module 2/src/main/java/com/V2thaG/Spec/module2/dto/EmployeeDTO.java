@@ -5,8 +5,11 @@ package com.V2thaG.Spec.module2.dto;
 import java.time.LocalDate;
 
 /// You dont have any specific annotation for a DTO but you can define attributes within the class
+/// Note that in this class with the DTO in it, you would define the validation for each attribute as in you would check if say the name or age is valid or not
 
 public class EmployeeDTO {
+
+
 
     //attributes
     private Long id;

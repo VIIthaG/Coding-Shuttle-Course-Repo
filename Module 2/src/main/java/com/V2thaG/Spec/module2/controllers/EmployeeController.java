@@ -1,9 +1,12 @@
 package com.V2thaG.Spec.module2.controllers;
 
 import com.V2thaG.Spec.module2.dto.EmployeeDTO;
+import com.V2thaG.Spec.module2.entities.EmployeeEntity;
+import com.V2thaG.Spec.module2.repositories.EmployeeRepository;
 import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalDate;
+import java.util.List;
 
 @RestController
 @RequestMapping("/employees") /// this line basically is used to denote the parent url directory of all of what is below, so for '/employeeId' it instead becomes: '/employees/employeeId'
@@ -21,27 +24,31 @@ public class EmployeeController {
 //    }
 
 
-    @GetMapping("/employees/{employeeId}")
-    //here, the @PathVariable annotation takes the value from {employeeID} in the URL and put it into the employeeID parameter below in the function params.
+    private final EmployeeRepository employeeRepository ;
 
-    public EmployeeDTO getEmployeeById( @PathVariable Long employeeId){
-        return new EmployeeDTO(employeeId, "VG","vllthag@gmail.com", 27, LocalDate.of(2026,6,25), true);
+    //Keep in mind that the controllers should ideally be connected to the service layer and then only connected to the entity layer, not like here where the entity and controllers are directly hooked up
+    public EmployeeController(EmployeeRepository employeeRepository ) {
+        this.employeeRepository = employeeRepository;
+    }
 
-        /// And here with the power of Jackson, our java object automatically gets converted into a json
+    @GetMapping("/{employeeId}")
+    public EmployeeEntity getEmployeeById( @PathVariable Long employeeId){     //here, the @PathVariable annotation takes the value from {employeeID} in the URL and put it into the employeeID parameter below in the function params.
+        return employeeRepository.findById(employeeId).orElse(null);       //we are using JPA's predefined method .findById() to return a method instead of a predefined object like what we did in lecture 2.2
+                                                                               /// And here with the power of Jackson, our java object automatically gets converted into a json
     }
 
     @GetMapping()
-    //so basically here, if we enter the queryparams after the '?' symbol in the url which denotes the query params which are optional, whatever is defined below is returned to us
-    public String getEmployee(@RequestParam(required = false) Integer age,
-                              @RequestParam(required = false) String value){
+    //so basically here, if we enter the query-params after the '?' symbol in the url which denotes the query params which are optional, whatever is defined below is returned to us
+    public List<EmployeeEntity> getAllEmployee(@RequestParam(required = false) Integer age,
+                                               @RequestParam(required = false) String value){
 
-        return "Hi!  "+ value + " You are this old: " + age;
+        return employeeRepository.findAll();
     }
 
     @PostMapping
-    public EmployeeDTO createNewEmployee(@RequestBody EmployeeDTO inputEmployee){
-        inputEmployee.setId(100L); //100L is just 100 the number but L stands for Long as in the datatype
-        return inputEmployee;
+    public EmployeeEntity createNewEmployee(@RequestBody EmployeeEntity inputEmployee){
+        return employeeRepository.save(inputEmployee);
+
     }
 
     @PutMapping
